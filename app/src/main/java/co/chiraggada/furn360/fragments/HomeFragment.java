@@ -17,10 +17,10 @@ import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 
 import java.util.ArrayList;
 
-import co.chiraggada.furn360.AR.ArActivity;
 import co.chiraggada.furn360.Adapters.BannerCardsAdapter;
 import co.chiraggada.furn360.Adapters.HomeCardsAdapters;
 import co.chiraggada.furn360.Adapters.homeCardsGridAdapters;
+import co.chiraggada.furn360.IndividualProductActivity;
 import co.chiraggada.furn360.R;
 import co.chiraggada.furn360.models.CardsModel;
 
@@ -140,27 +140,27 @@ public class HomeFragment extends Fragment implements HomeCardsAdapters.OnCardLi
     }
 
     public void cardsActivity(View view) {
-        startActivity(new Intent(getActivity(), ArActivity.class));
+        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
     }
 
     public void tshirtActivity(View view) {
-        startActivity(new Intent(getActivity(), ArActivity.class));
+        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
     }
 
     public void bagsActivity(View view) {
-        startActivity(new Intent(getActivity(), ArActivity.class));
+        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
     }
 
     public void stationaryAcitivity(View view) {
-        startActivity(new Intent(getActivity(), ArActivity.class));
+        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
     }
 
     public void calendarsActivity(View view) {
-        startActivity(new Intent(getActivity(), ArActivity.class));
+        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
     }
 
     public void keychainsActivity(View view) {
-        startActivity(new Intent(getActivity(), ArActivity.class));
+        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
     }
 
     @Override
