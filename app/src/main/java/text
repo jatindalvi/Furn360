@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarwrap">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:auto_cycle="true"
+                app:pager_animation="Default"
+                app:pager_animation_span="1100" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <android.support.v7.widget.CardView
+                        android:onClick="cardsActivity"
+                        style="@style/homegridcard"
+                        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                        <RelativeLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/visitingcards23"
+                                style="@style/homegridimage"
+                                android:src="@drawable/desk" />
+
+                            <TextView
+                                android:layout_below="@id/visitingcards23"
+                                android:text="Tables"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        style="@style/homegridcard"
+                        android:onClick="cardsActivity"
+                        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/visitingcards"
+                                style="@style/homegridimage"
+                                android:src="@drawable/sofa" />
+
+                            <TextView
+                                style="@style/homegridtext"
+                                android:layout_below="@id/visitingcards"
+                                android:text="sofa" />
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:onClick="cardsActivity"
+                        style="@style/homegridcard"
+                        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                        <RelativeLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/visditingcards"
+                                style="@style/homegridimage"
+                                android:src="@drawable/storage" />
+
+                            <TextView
+                                android:layout_below="@id/visditingcards"
+                                android:text="Storage"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:onClick="cardsActivity"
+                        style="@style/homegridcard"
+                        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                        <RelativeLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/visditingcards4"
+                                style="@style/homegridimage"
+                                android:src="@drawable/single" />
+
+                            <TextView
+                                android:layout_below="@id/visditingcards4"
+                                android:text="Bed"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        style="@style/homegridcard"
+                        card_view:cardCornerRadius="@dimen/card_album_radius"
+                        android:onClick="tshirtActivity">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/tshirts"
+                                style="@style/homegridimage"
+                                android:src="@drawable/dining" />
+
+                            <TextView
+                                android:layout_below="@id/tshirts"
+                                android:text="Chairs"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <android.support.v7.widget.CardView
+                        android:onClick="cardsActivity"
+                        style="@style/homegridcard2"
+                        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                        <RelativeLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/visitingcards29"
+                                style="@style/homegridimage"
+                                android:src="@drawable/desk" />
+
+                            <TextView
+                                android:layout_below="@id/visitingcards29"
+                                android:text="Tables"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:onClick="cardsActivity"
+                        style="@style/homegridcard2"
+                        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                        <RelativeLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/visitingcards9"
+                                style="@style/homegridimage"
+                                android:src="@drawable/sofa" />
+
+                            <TextView
+                                android:layout_below="@id/visitingcards9"
+                                android:text="sofa"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:onClick="cardsActivity"
+                        style="@style/homegridcard2"
+                        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                        <RelativeLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/visditingcards9"
+                                style="@style/homegridimage"
+                                android:src="@drawable/storage" />
+
+                            <TextView
+                                android:layout_below="@id/visditingcards9"
+                                android:text="Storage"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:onClick="cardsActivity"
+                        style="@style/homegridcard2"
+                        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                        <RelativeLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/visditingcards94"
+                                style="@style/homegridimage"
+                                android:src="@drawable/single" />
+
+                            <TextView
+                                android:layout_below="@id/visditingcards94"
+                                android:text="Bed"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        style="@style/homegridcard2"
+                        card_view:cardCornerRadius="@dimen/card_album_radius"
+                        android:onClick="tshirtActivity">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/tshirts9"
+                                style="@style/homegridimage"
+                                android:src="@drawable/dining" />
+
+                            <TextView
+                                android:layout_below="@id/tshirts9"
+                                android:text="Chairs"
+                                style="@style/homegridtext"/>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:weightSum="10">-->
+
+<!--                    <android.support.v7.widget.CardView-->
+<!--                        style="@style/homegridcard"-->
+<!--                        card_view:cardCornerRadius="@dimen/card_album_radius"-->
+<!--                        android:onClick="bagsActivity">-->
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/bags"-->
+<!--                                android:src="@drawable/diningtable"-->
+<!--                                style="@style/homegridimage" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_below="@id/bags"-->
+<!--                                android:text="Dinning"-->
+<!--                                style="@style/homegridtext"/>-->
+
+<!--                        </RelativeLayout>-->
+
+<!--                    </android.support.v7.widget.CardView>-->
+
+<!--                    <android.support.v7.widget.CardView-->
+<!--                        style="@style/homegridcard"-->
+<!--                        card_view:cardCornerRadius="@dimen/card_album_radius"-->
+<!--                        android:onClick="stationaryAcitivity">-->
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/Stationary"-->
+<!--                                style="@style/homegridimage"-->
+<!--                                android:src="@drawable/storage" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_below="@id/Stationary"-->
+<!--                                android:text="Storage"-->
+<!--                                style="@style/homegridtext"/>-->
+
+<!--                        </RelativeLayout>-->
+<!--                    </android.support.v7.widget.CardView>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:weightSum="10">-->
+
+<!--                    <android.support.v7.widget.CardView-->
+<!--                        style="@style/homegridcard"-->
+<!--                        card_view:cardCornerRadius="@dimen/card_album_radius"-->
+<!--                        android:onClick="calendarsActivity">-->
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/calendars"-->
+<!--                                style="@style/homegridimage"-->
+<!--                                android:src="@drawable/sofa" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_below="@id/calendars"-->
+<!--                                android:text="Sofa"-->
+<!--                                style="@style/homegridtext"/>-->
+
+<!--                        </RelativeLayout>-->
+
+<!--                    </android.support.v7.widget.CardView>-->
+<!--                    <android.support.v7.widget.CardView-->
+<!--                        style="@style/homegridcard"-->
+<!--                        card_view:cardCornerRadius="@dimen/card_album_radius"-->
+<!--                        android:onClick="keychainsActivity">-->
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/keychain"-->
+<!--                                style="@style/homegridimage"-->
+<!--                                android:src="@drawable/single" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_below="@id/keychain"-->
+<!--                                android:text="Bed"-->
+<!--                                style="@style/homegridtext"/>-->
+
+<!--                        </RelativeLayout>-->
+
+<!--                    </android.support.v7.widget.CardView>-->
+
+<!--                </LinearLayout>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:background="#34495e"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="5dp"
+                    style="@style/headingfonts"
+                    android:textColor="#bdc3c7"
+                    android:text="We are best at"
+                    android:layout_weight="3"/>
+
+                <com.tomer.fadingtextview.FadingTextView
+                    android:layout_width="wrap_content"
+                    android:textColor="#ecf0f1"
+                    app:timeout="500"
+                    style="@style/headingfonts"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    app:texts="@array/examples"
+                    android:layout_weight="7"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
+
+
+
+
+recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Movie movie = movieList.get(position);
+                Toast.makeText(getApplicationContext(), movie.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
+
+ public class CustomGrid extends BaseAdapter{
+ 	  private Context mContext;
+ 	  private final String[] web;
+ 	  private final int[] Imageid;
+
+ 	    public CustomGrid(Context c,String[] web,int[] Imageid ) {
+ 	        mContext = c;
+ 	        this.Imageid = Imageid;
+ 	        this.web = web;
+ 	    }
+
+ 		@Override
+ 		public int getCount() {
+ 			// TODO Auto-generated method stub
+ 			return web.length;
+ 		}
+
+ 		@Override
+ 		public Object getItem(int position) {
+ 			// TODO Auto-generated method stub
+ 			return null;
+ 		}
+
+ 		@Override
+ 		public long getItemId(int position) {
+ 			// TODO Auto-generated method stub
+ 			return 0;
+ 		}
+
+ 		@Override
+ 		public View getView(int position, View convertView, ViewGroup parent) {
+ 			// TODO Auto-generated method stub
+ 			View grid;
+ 			LayoutInflater inflater = (LayoutInflater) mContext
+ 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+ 	        if (convertView == null) {
+
+ 	        	grid = new View(mContext);
+ 				grid = inflater.inflate(R.layout.grid_single, null);
+ 	        	TextView textView = (TextView) grid.findViewById(R.id.grid_text);
+ 	        	ImageView imageView = (ImageView)grid.findViewById(R.id.grid_image);
+ 	        	textView.setText(web[position]);
+ 	        	imageView.setImageResource(Imageid[position]);
+ 	        } else {
+ 	        	grid = (View) convertView;
+ 	        }
+
+ 			return grid;
+ 		}
+ }
+
+
+
+
+
+
+
+
+ @Override
+ 	protected void onCreate(Bundle savedInstanceState) {
+ 		super.onCreate(savedInstanceState);
+ 		setContentView(R.layout.activity_main);
+
+ 		CustomGrid adapter = new CustomGrid(MainActivity.this, web, imageId);
+ 		grid=(GridView)findViewById(R.id.grid);
+ 				grid.setAdapter(adapter);
+ 				grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+ 		            @Override
+ 		            public void onItemClick(AdapterView<?> parent, View view,
+ 		                                    int position, long id) {
+ 		                Toast.makeText(MainActivity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+
+ 		            }
+ 		        });
+
+ 	}
+
+ }
