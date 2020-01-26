@@ -4,21 +4,24 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/home"
-        android:title="home" />
-
+        android:title="HOME" />
     <item
-        android:id="@+id/navigation_cart"
+        android:id="@+id/navigation_categories"
+        android:icon="@drawable/categories"
+        android:title="CATEGORIES" />
+    <item
+        android:id="@+id/navigation_notification"
         android:icon="@drawable/cart"
-        android:title="cart" />
+        android:title="ALERTS" />
 
     <item
         android:id="@+id/navigation_wishlist"
         android:icon="@drawable/wishlist"
-        android:title="wish list" />
+        android:title="WISH LIST" />
 
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/profile"
-        android:title="profile" />
+        android:title="PROFILE" />
 
 </menu>

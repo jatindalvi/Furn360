@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "627190143503",
+    "firebase_url": "https://furn360-b4953.firebaseio.com",
+    "project_id": "furn360-b4953",
+    "storage_bucket": "furn360-b4953.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627190143503:android:5b6e6c99169df79a0fe17a",
+        "android_client_info": {
+          "package_name": "co.chiraggada.furn360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627190143503-jfun7e740e14b1d9btln72djeu2vutem.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.chiraggada.furn360",
+            "certificate_hash": "8d17e7f5c4a75591c9a7a36188fc8bd28b8efabe"
+          }
+        },
+        {
+          "client_id": "627190143503-0kdt9tg4n043pugrtj3uiser85e44j1b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_-3DUd8duhRSqHsJtaw1PeuScQw7lmiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627190143503-0kdt9tg4n043pugrtj3uiser85e44j1b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

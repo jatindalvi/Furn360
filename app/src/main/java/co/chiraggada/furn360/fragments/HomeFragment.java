@@ -53,7 +53,6 @@ public class HomeFragment extends Fragment implements HomeCardsAdapters.OnCardLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        View view = inflater.inflate(R.layout.fragment_cultural, container, false);
 //        Toast.makeText(getActivity(), "chirag was here", Toast.LENGTH_SHORT).show();
 
     }
@@ -71,21 +70,10 @@ public class HomeFragment extends Fragment implements HomeCardsAdapters.OnCardLi
 
 
         cardsModelArrayList = banners();
+
         inflatemenu();
-//        inithomeRecyclerview();
-        bannerCardsAdapter = new BannerCardsAdapter(getActivity(), cardsModelArrayList);
-        mrecyclerView.setAdapter(bannerCardsAdapter);
-        mrecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
-
-        homeCardsGridAdapters ad = new homeCardsGridAdapters(getActivity(),bannername,bannerlist);
-        home_grid.setAdapter(ad);
-        home_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getActivity(),bannername[+i],Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        inithomeRecyclerview();
+        initCards();
         inflateImageSlider();
 
         return view;
@@ -108,12 +96,22 @@ public class HomeFragment extends Fragment implements HomeCardsAdapters.OnCardLi
         return list;
     }
 
-    private void inithomeRecyclerview(){
+    private void initCards(){
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
-        homerecyclerview.setLayoutManager(linearLayoutManager);
-        mHomeCardsAdapter = new HomeCardsAdapters(getActivity(),cardsModelArrayList,this);
-        homerecyclerview.setAdapter(mHomeCardsAdapter);
+        bannerCardsAdapter = new BannerCardsAdapter(getActivity(), cardsModelArrayList);
+        mrecyclerView.setAdapter(bannerCardsAdapter);
+        mrecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+    }
+
+    private void inithomeRecyclerview(){
+        homeCardsGridAdapters ad = new homeCardsGridAdapters(getActivity(),bannername,bannerlist);
+        home_grid.setAdapter(ad);
+        home_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getActivity(),bannername[+i],Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

@@ -183,7 +183,6 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
 
                         if (mPtrCount < 2) {
                             queuedSingleTaps.offer(motionEvent);
-                            Toast.makeText(ArActivity.this, "kuch bhi", Toast.LENGTH_SHORT).show();
                             return true;
                         } else
                             return false;
@@ -229,16 +228,6 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
 
         installRequested = false;
 
-        change.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!isObjReplaced){
-                    Toast.makeText(ArActivity.this, "changing", Toast.LENGTH_SHORT).show();
-                    textureName = "models/pot/table1.png";
-                    isObjReplaced = true;
-                }
-            }
-        });
     }
 
     @Override
@@ -392,6 +381,7 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
             }
             return;
         }
+
 
         // Clear screen to notify driver it should not load any pixels from previous frame.
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
