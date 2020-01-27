@@ -8,8 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.SliderLayout;
@@ -17,32 +15,20 @@ import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 
 import java.util.ArrayList;
 
+import co.chiraggada.furn360.AR.ArActivity;
 import co.chiraggada.furn360.Adapters.BannerCardsAdapter;
-import co.chiraggada.furn360.Adapters.HomeCardsAdapters;
-import co.chiraggada.furn360.Adapters.homeCardsGridAdapters;
-import co.chiraggada.furn360.IndividualProductActivity;
 import co.chiraggada.furn360.R;
-import co.chiraggada.furn360.models.CardsModel;
+import co.chiraggada.furn360.models.bannerCardsModel;
 
-public class HomeFragment extends Fragment implements HomeCardsAdapters.OnCardListener {
+public class HomeFragment extends Fragment {
 
-    private static final String TAG = "HomeFragment";
 
-    //ui components
     private SliderLayout sliderShow;
-    private RecyclerView mrecyclerView,homerecyclerview;
-    private GridView home_grid;
-
-    //vars
-    private ArrayList<CardsModel> list = new ArrayList<>();
-
-    private ArrayList<CardsModel> cardsModelArrayList;
+    private RecyclerView recyclerView;
+    private ArrayList<bannerCardsModel> bannerCardsModelArrayList;
     private BannerCardsAdapter bannerCardsAdapter;
-
-    private HomeCardsAdapters mHomeCardsAdapter;
-
-    private int[] bannerlist = new int[]{R.drawable.sofa,R.drawable.storage,R.drawable.single,R.drawable.desk,R.drawable.dining};
-    private String[] bannername = new String[]{"sofa","storage","Bed","Desk","Dining"};
+    private int[] bannerlist = new int[]{R.drawable.sofa,R.drawable.storage,R.drawable.sofa,R.drawable.storage};
+    private String[] bannername = new String[]{"sofa1","storage1","sofa2","storag2"};
 
 
     public HomeFragment() {
@@ -53,7 +39,8 @@ public class HomeFragment extends Fragment implements HomeCardsAdapters.OnCardLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        Toast.makeText(getActivity(), "chirag was here", Toast.LENGTH_SHORT).show();
+//        View view = inflater.inflate(R.layout.fragment_cultural, container, false);
+        Toast.makeText(getActivity(), "chirag was here", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -61,58 +48,31 @@ public class HomeFragment extends Fragment implements HomeCardsAdapters.OnCardLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
         sliderShow = view.findViewById(R.id.slider);
-        mrecyclerView = view.findViewById(R.id.recycler);
-        homerecyclerview = view.findViewById(R.id.menurecycler);
-        home_grid = view.findViewById(R.id.grid_home);
+
+        recyclerView = view.findViewById(R.id.recycler);
+
+        bannerCardsModelArrayList = banners();
+        bannerCardsAdapter = new BannerCardsAdapter(getActivity(),bannerCardsModelArrayList);
+        recyclerView.setAdapter(bannerCardsAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
 
 
-
-        cardsModelArrayList = banners();
-
-        inflatemenu();
-        inithomeRecyclerview();
-        initCards();
         inflateImageSlider();
 
         return view;
     }
 
-    private void inflatemenu() {
+    private ArrayList<bannerCardsModel> banners(){
+        ArrayList<bannerCardsModel> list = new ArrayList<>();
 
-
-
-    }
-
-    private ArrayList<CardsModel> banners(){
-
-        for(int i=0;i<5;i++){
-            CardsModel bannerModel = new CardsModel();
+        for(int i=0;i<4;i++){
+            bannerCardsModel bannerModel = new bannerCardsModel();
             bannerModel.setImage_drawable(bannerlist[i]);
             bannerModel.setName(bannername[i]);
             list.add(bannerModel);
         }
         return list;
-    }
-
-    private void initCards(){
-
-        bannerCardsAdapter = new BannerCardsAdapter(getActivity(), cardsModelArrayList);
-        mrecyclerView.setAdapter(bannerCardsAdapter);
-        mrecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
-    }
-
-    private void inithomeRecyclerview(){
-        homeCardsGridAdapters ad = new homeCardsGridAdapters(getActivity(),bannername,bannerlist);
-        home_grid.setAdapter(ad);
-        home_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getActivity(),bannername[+i],Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 
     private void inflateImageSlider() {
@@ -138,31 +98,27 @@ public class HomeFragment extends Fragment implements HomeCardsAdapters.OnCardLi
     }
 
     public void cardsActivity(View view) {
-        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
+        startActivity(new Intent(getActivity(), ArActivity.class));
     }
 
     public void tshirtActivity(View view) {
-        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
+        startActivity(new Intent(getActivity(), ArActivity.class));
     }
 
     public void bagsActivity(View view) {
-        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
+        startActivity(new Intent(getActivity(), ArActivity.class));
     }
 
     public void stationaryAcitivity(View view) {
-        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
+        startActivity(new Intent(getActivity(), ArActivity.class));
     }
 
     public void calendarsActivity(View view) {
-        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
+        startActivity(new Intent(getActivity(), ArActivity.class));
     }
 
     public void keychainsActivity(View view) {
-        startActivity(new Intent(getActivity(), IndividualProductActivity.class));
+        startActivity(new Intent(getActivity(), ArActivity.class));
     }
 
-    @Override
-    public void cardListener(int position) {
-        Toast.makeText(getActivity(), Integer.toString(position), Toast.LENGTH_SHORT).show();
-    }
 }

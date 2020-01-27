@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetSequence;
 import com.mikepenz.crossfadedrawerlayout.view.CrossfadeDrawerLayout;
@@ -62,12 +61,6 @@ public class MainActivity extends AppCompatActivity {
     private String first_time;
     HomeFragment homeFragment;
 
-    //UI
-    //ToolbarUI
-    Toolbar toolbar;
-    LottieAnimationView NotifiIntro;
-    TextView appname;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,14 +68,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Typeface typeface = ResourcesCompat.getFont(this, R.font.blacklist);
-
-        //UI
-        //ToolbarUI
-        toolbar = findViewById(R.id.toolbar);
-        appname = findViewById(R.id.appname);
+        TextView appname = findViewById(R.id.appname);
         appname.setTypeface(typeface);
-
-        NotifiIntro = findViewById(R.id.notifintro);
 
         //check Internet Connection
         new CheckInternetConnection(this).checkConnection();
@@ -121,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     openFragment(homeFragment, "Home fragment");
                     return true;
-                case R.id.navigation_notification:
-                    Toast.makeText(MainActivity.this, "Notifications", Toast.LENGTH_SHORT).show();
+                case R.id.navigation_cart:
+                    Toast.makeText(MainActivity.this, "cart", Toast.LENGTH_SHORT).show();
                     DepartmentFragment departmentFragment = new DepartmentFragment();
                     if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
                         getSupportFragmentManager().popBackStack();
@@ -133,8 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_wishlist:
                     Toast.makeText(MainActivity.this, "wishlist", Toast.LENGTH_SHORT).show();
                     WishlistFragment wishlistFragment = new WishlistFragment();
-                    appname.setText("Wishlist");
-                    NotifiIntro.setVisibility(View.INVISIBLE);
                     if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
                         getSupportFragmentManager().popBackStack();
                     }
@@ -305,13 +290,13 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 break;
                             case 2:
-                                startActivity(new Intent(MainActivity.this, IndividualProductActivity.class));
+                                startActivity(new Intent(MainActivity.this, ArActivity.class));
                                 break;
                             case 3:
-                                startActivity(new Intent(MainActivity.this, IndividualProductActivity.class));
+                                startActivity(new Intent(MainActivity.this, ArActivity.class));
                                 break;
                             case 4:
-                                startActivity(new Intent(MainActivity.this, IndividualProductActivity.class));
+                                startActivity(new Intent(MainActivity.this, ArActivity.class));
                                 break;
                             case 5:
                                 session.logoutUser();

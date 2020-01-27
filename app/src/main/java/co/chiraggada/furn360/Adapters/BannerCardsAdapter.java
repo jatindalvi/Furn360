@@ -12,16 +12,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import co.chiraggada.furn360.R;
-import co.chiraggada.furn360.models.CardsModel;
+import co.chiraggada.furn360.models.bannerCardsModel;
 
 public class BannerCardsAdapter extends RecyclerView.Adapter<BannerCardsAdapter.MyViewHolder> {
 
     private LayoutInflater inflater;
-    private ArrayList<CardsModel> cardsModelArrayList;
+    private ArrayList<bannerCardsModel> bannerCardsModelArrayList;
 
-    public BannerCardsAdapter(Context ctx, ArrayList<CardsModel> cardsModelsArraylist){
+    public BannerCardsAdapter(Context ctx, ArrayList<bannerCardsModel> bannerCardsModelsArraylist){
         inflater = LayoutInflater.from(ctx);
-        this.cardsModelArrayList = cardsModelsArraylist;
+        this.bannerCardsModelArrayList = bannerCardsModelsArraylist;
     }
 
     @NonNull
@@ -36,13 +36,13 @@ public class BannerCardsAdapter extends RecyclerView.Adapter<BannerCardsAdapter.
     @Override
     public void onBindViewHolder(@NonNull BannerCardsAdapter.MyViewHolder holder, int position) {
 
-        holder.iv.setImageResource(cardsModelArrayList.get(position).getImage_drawable());
-        holder.text.setText(cardsModelArrayList.get(position).getName());
+        holder.iv.setImageResource(bannerCardsModelArrayList.get(position).getImage_drawable());
+        holder.text.setText(bannerCardsModelArrayList.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return cardsModelArrayList.size();
+        return bannerCardsModelArrayList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

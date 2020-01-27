@@ -21,10 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".IndividualProductActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".SplashActivity"
+
+        <activity android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,21 +30,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ForgotPassword"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".Register"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ForgotPassword"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Register"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".WelcomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".AR.ArActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

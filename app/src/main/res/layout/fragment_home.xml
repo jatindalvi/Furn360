@@ -26,20 +26,6 @@
                 app:pager_animation="Default"
                 app:pager_animation_span="1100" />
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/menurecycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginTop="15dp"
-                />
-
-            <GridView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:numColumns="5"
-                android:id="@+id/grid_home"/>
 
             <LinearLayout
                 android:gravity="center"
