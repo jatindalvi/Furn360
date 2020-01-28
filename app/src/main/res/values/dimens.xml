@@ -24,6 +24,8 @@
     <dimen name="text_size_xmedium">14dp</dimen>
     <dimen name="text_size_large">16dp</dimen>
     <dimen name="view_width_small">1dp</dimen>
+    <dimen name="view_width_large">2.5dp</dimen>
+    <dimen name="view_width_xlarge">4dp</dimen>
     <dimen name="view_width_xsmall">0.5dp</dimen>
     <dimen name="margin_small">4dp</dimen>
     <dimen name="margin_medium">8dp</dimen>

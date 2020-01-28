@@ -4,8 +4,10 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.design.widget.BaseTransientBottomBar;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -14,7 +16,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.ar.core.Anchor;
@@ -87,8 +88,8 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
     public RadioGroup radioGroup;
     private int mscale;
     public Button remove;
-    public Button change;
-    public Spinner spinner;
+    public FloatingActionButton RemoveFAB;
+    public RecyclerView textureChangeRecycler;
 
     @Override
     protected  void onCreate(Bundle savedInstanceState){
@@ -100,11 +101,22 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
         surfaceView = findViewById(R.id.surfaceview);
         seekBar = findViewById(R.id.seekbar);
         remove = findViewById(R.id.remove);
-        change = findViewById(R.id.bt);
-        spinner = findViewById(R.id.changespinner);
         radioGroup = findViewById(R.id.radioGroup);
+        RemoveFAB = findViewById(R.id.RemoveFAB);
+        textureChangeRecycler = findViewById(R.id.texture_change_recycler);
         displayRotationHelper = new DisplayRotationHelper(/*context=*/ this);
         mRotationDetector = new RotationGestureDetector(this);
+
+
+        RemoveFAB.setImageResource(R.drawable.cartempty);
+        RemoveFAB.setBackgroundColor(getResources().getColor(R.color.bgBottomNavigation));
+        RemoveFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                remove();
+                Toast.makeText(ArActivity.this, "removing via FAB", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         remove.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,16 +241,16 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
 
         installRequested = false;
 
-        change.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!isObjReplaced){
-                    Toast.makeText(ArActivity.this, "changing", Toast.LENGTH_SHORT).show();
-                    textureName = "models/pot/table1.png";
-                    isObjReplaced = true;
-                }
-            }
-        });
+//        change.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(!isObjReplaced){
+//                    Toast.makeText(ArActivity.this, "changing", Toast.LENGTH_SHORT).show();
+//                    textureName = "models/pot/table1.png";
+//                    isObjReplaced = true;
+//                }
+//            }
+//        });
     }
 
     @Override

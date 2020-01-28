@@ -12,12 +12,13 @@
         android:layout_gravity="top"
         android:backgroundTint="#808080"/>
 
-    <Button
-        android:id="@+id/bt"
-        android:layout_width="wrap_content"
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#336699"
-        android:text="Change object" />
+        android:id="@+id/texture_change_recycler"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"/>
 
 
     <RadioGroup
@@ -49,27 +50,30 @@
         android:id="@+id/seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bt"
+        android:layout_above="@id/remove"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#330000"
         android:progress="50"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:id="@+id/RemoveFAB"
         />
 
     <Button
         android:id="@+id/remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:backgroundTint="#336699"
-        android:text="Remove" />
+        android:layout_above="@id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/primary_dark"
+        android:text="Detach" />
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/changespinner"
-        android:layout_above="@+id/radioGroup"
-        android:layout_margin="10dp"
-        />
 
 </RelativeLayout>

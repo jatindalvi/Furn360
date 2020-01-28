@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(new Intent(MainActivity.this, ArActivity.class));
                                 break;
                             case 3:
-                                startActivity(new Intent(MainActivity.this, ArActivity.class));
+                                startActivity(new Intent(MainActivity.this, IndividualProductActivity.class));
                                 break;
                             case 4:
                                 startActivity(new Intent(MainActivity.this, ArActivity.class));
