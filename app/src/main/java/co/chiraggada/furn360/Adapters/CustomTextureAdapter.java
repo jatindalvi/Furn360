@@ -55,7 +55,7 @@ public class CustomTextureAdapter extends RecyclerView.Adapter<CustomTextureAdap
         public textureViewHolder(View itemView,OnTextureListener onTextureListener) {
             super(itemView);
             iv = itemView.findViewById(R.id.iv);
-            onTextureListener = onTextureListener;
+            this.onTextureListener = onTextureListener;
 
             itemView.setOnClickListener(this);
         }

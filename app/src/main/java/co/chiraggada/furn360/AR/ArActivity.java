@@ -7,13 +7,13 @@ import android.support.design.widget.BaseTransientBottomBar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -52,7 +52,7 @@ import co.chiraggada.furn360.rendering.ObjectRenderer;
 import co.chiraggada.furn360.rendering.PlaneRenderer;
 import co.chiraggada.furn360.rendering.PointCloudRenderer;
 
-public class ArActivity extends AppCompatActivity implements GLSurfaceView.Renderer, RotationGestureDetector.OnRotationGestureListener {
+public class ArActivity extends AppCompatActivity implements GLSurfaceView.Renderer, RotationGestureDetector.OnRotationGestureListener, CustomTextureAdapter.OnTextureListener {
 
     private static final String TAG = ArActivity.class.getSimpleName();
 
@@ -89,7 +89,6 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
     private SeekBar seekBar;
     public RadioGroup radioGroup;
     private int mscale;
-    public Button remove;
     public FloatingActionButton RemoveFAB;
     public RecyclerView textureChangeRecycler;
 
@@ -108,7 +107,6 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
 
         surfaceView = findViewById(R.id.surfaceview);
         seekBar = findViewById(R.id.seekbar);
-        remove = findViewById(R.id.remove);
         radioGroup = findViewById(R.id.radioGroup);
         RemoveFAB = findViewById(R.id.RemoveFAB);
         textureChangeRecycler = findViewById(R.id.texture_change_recycler);
@@ -117,9 +115,9 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
 
         textureChangeRecycler = findViewById(R.id.texture_change_recycler);
 
-//        CustomTextureAdapter ct = new CustomTextureAdapter(this,bannerCardsModelArrayList,this);
-//        textureChangeRecycler.setAdapter(ct);
-//        textureChangeRecycler.setOnClickListener(new );
+        bannerCardsModelArrayList = banners();
+
+        initTextureRecyclerview();
 
         RemoveFAB.setImageResource(R.drawable.cartempty);
         RemoveFAB.setBackgroundColor(getResources().getColor(R.color.bgBottomNavigation));
@@ -128,14 +126,6 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
             public void onClick(View view) {
                 remove();
                 Toast.makeText(ArActivity.this, "removing via FAB", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        remove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove();
-                Toast.makeText(ArActivity.this, "Removing", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -208,7 +198,6 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
 
                         if (mPtrCount < 2) {
                             queuedSingleTaps.offer(motionEvent);
-                            Toast.makeText(ArActivity.this, "kuch bhi", Toast.LENGTH_SHORT).show();
                             return true;
                         } else
                             return false;
@@ -530,6 +519,26 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
         }
     }
 
+
+    private ArrayList<bannerCardsModel> banners(){
+        ArrayList<bannerCardsModel> list = new ArrayList<>();
+
+        for(int i=0;i<3;i++){
+            bannerCardsModel bannerModel = new bannerCardsModel();
+            bannerModel.setImage_drawable(textureList[i]);
+            bannerModel.setName(texturename[i]);
+            list.add(bannerModel);
+        }
+        return list;
+    }
+
+    private void initTextureRecyclerview(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        textureChangeRecycler.setLayoutManager(linearLayoutManager);
+        customTextureAdapter = new CustomTextureAdapter(this,bannerCardsModelArrayList,this);
+        textureChangeRecycler.setAdapter(customTextureAdapter);
+    }
+
     private void showSnackbarMessage(String message, boolean finishOnDismiss) {
         messageSnackbar =
                 Snackbar.make(
@@ -591,4 +600,9 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
         anchors.remove(0);
     }
 
+    @Override
+    public void textureListener(int position) {
+//        MNOTES.GET(position)
+        Toast.makeText(this, "texture changed "+ position, Toast.LENGTH_SHORT).show();
+    }
 }
