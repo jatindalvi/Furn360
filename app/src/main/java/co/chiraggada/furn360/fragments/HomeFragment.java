@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.SliderLayout;
@@ -17,19 +19,25 @@ import java.util.ArrayList;
 
 import co.chiraggada.furn360.AR.ArActivity;
 import co.chiraggada.furn360.Adapters.BannerCardsAdapter;
+import co.chiraggada.furn360.Adapters.homeCardsGridAdapters;
 import co.chiraggada.furn360.R;
 import co.chiraggada.furn360.models.bannerCardsModel;
 
 public class HomeFragment extends Fragment {
 
 
+    //UI components
     private SliderLayout sliderShow;
     private RecyclerView recyclerView;
+    private GridView homeGridview;
+
+
+
     private ArrayList<bannerCardsModel> bannerCardsModelArrayList;
     private BannerCardsAdapter bannerCardsAdapter;
-    private int[] bannerlist = new int[]{R.drawable.sofa,R.drawable.storage,R.drawable.sofa,R.drawable.storage};
-    private String[] bannername = new String[]{"sofa1","storage1","sofa2","storag2"};
 
+    private int[] bannerlist = new int[]{R.drawable.sofa,R.drawable.storage,R.drawable.single,R.drawable.desk,R.drawable.dining};
+    private String[] bannername = new String[]{"sofa","storage","Bed","Desk","Dining"};
 
     public HomeFragment() {
         // Required empty public constructor
@@ -51,12 +59,22 @@ public class HomeFragment extends Fragment {
         sliderShow = view.findViewById(R.id.slider);
 
         recyclerView = view.findViewById(R.id.recycler);
+        homeGridview = view.findViewById(R.id.homeCardsRecyclerview);
 
         bannerCardsModelArrayList = banners();
+
         bannerCardsAdapter = new BannerCardsAdapter(getActivity(),bannerCardsModelArrayList);
         recyclerView.setAdapter(bannerCardsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
 
+        homeCardsGridAdapters ad = new homeCardsGridAdapters(getActivity(),bannername,bannerlist);
+        homeGridview.setAdapter(ad);
+        homeGridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getActivity(),bannername[+i],Toast.LENGTH_SHORT).show();
+            }
+        });
 
         inflateImageSlider();
 

@@ -44,7 +44,9 @@ import javax.microedition.khronos.opengles.GL10;
 
 import co.chiraggada.furn360.AR.Helper.CameraPermissionHelper;
 import co.chiraggada.furn360.AR.Helper.DisplayRotationHelper;
+import co.chiraggada.furn360.Adapters.CustomTextureAdapter;
 import co.chiraggada.furn360.R;
+import co.chiraggada.furn360.models.bannerCardsModel;
 import co.chiraggada.furn360.rendering.BackgroundRenderer;
 import co.chiraggada.furn360.rendering.ObjectRenderer;
 import co.chiraggada.furn360.rendering.PlaneRenderer;
@@ -91,6 +93,12 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
     public FloatingActionButton RemoveFAB;
     public RecyclerView textureChangeRecycler;
 
+    private ArrayList<bannerCardsModel> bannerCardsModelArrayList;
+    private CustomTextureAdapter customTextureAdapter;
+
+    private int[] textureList = new int[]{R.drawable.sofa,R.drawable.single,R.drawable.storage};
+    private String[] texturename = new String[]{"sofa","storage","Bed"};
+
     @Override
     protected  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -107,6 +115,11 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
         displayRotationHelper = new DisplayRotationHelper(/*context=*/ this);
         mRotationDetector = new RotationGestureDetector(this);
 
+        textureChangeRecycler = findViewById(R.id.texture_change_recycler);
+
+//        CustomTextureAdapter ct = new CustomTextureAdapter(this,bannerCardsModelArrayList,this);
+//        textureChangeRecycler.setAdapter(ct);
+//        textureChangeRecycler.setOnClickListener(new );
 
         RemoveFAB.setImageResource(R.drawable.cartempty);
         RemoveFAB.setBackgroundColor(getResources().getColor(R.color.bgBottomNavigation));

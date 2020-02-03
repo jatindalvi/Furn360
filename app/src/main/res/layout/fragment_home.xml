@@ -26,6 +26,13 @@
                 app:pager_animation="Default"
                 app:pager_animation_span="1100" />
 
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/homeCardsRecyclerview"
+                android:numColumns="5"
+                />
+
 
             <LinearLayout
                 android:gravity="center"
