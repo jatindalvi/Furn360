@@ -7,7 +7,6 @@ import android.support.design.widget.BaseTransientBottomBar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -533,8 +532,6 @@ public class ArActivity extends AppCompatActivity implements GLSurfaceView.Rende
     }
 
     private void initTextureRecyclerview(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        textureChangeRecycler.setLayoutManager(linearLayoutManager);
         customTextureAdapter = new CustomTextureAdapter(this,bannerCardsModelArrayList,this);
         textureChangeRecycler.setAdapter(customTextureAdapter);
     }

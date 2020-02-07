@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".fragments.DepartmentFragment"
+android:orientation="vertical">
+
+<TextView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.DepartmentFragment">
+    android:layout_height="wrap_content"
+    android:text="Lost Foud"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:textSize="40sp"
+    android:layout_marginTop="30dp"/>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/sofa" />
+
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:hint="City"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="8dp"
 
-</FrameLayout>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/browser_actions_divider_color"
+        android:textColorHint="@color/grey"
+        android:textCursorDrawable="@null" />
+
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/sofa" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:hint="City"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="8dp"
+
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/browser_actions_divider_color"
+        android:textColorHint="@color/grey"
+        android:textCursorDrawable="@null" />
+
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/sofa" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:hint="City"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="8dp"
+
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/browser_actions_divider_color"
+        android:textColorHint="@color/grey"
+        android:textCursorDrawable="@null" />
+
+</LinearLayout>
+
+
+</LinearLayout>
